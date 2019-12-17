@@ -27,7 +27,7 @@ endif(MUST_BUILD_LIBWWW_CLIENT)
 
 if(MUST_BUILD_CURL_CLIENT)
   FIND_PACKAGE(CURL REQUIRED)
-  include_directories(${CURL_INCLUDE_DIR})
+  include_directories(${CURL_INCLUDE_DIRS})
   set(client_curl_LIBS ${CURL_LIBRARY})
   set(xmlrpc_client_pkgconfig_req libcurl)
   list(APPEND transport_SOURCES
