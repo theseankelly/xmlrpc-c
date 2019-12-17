@@ -297,25 +297,25 @@ endif()
 
 
 include (CMakePackageConfigHelpers)
-configure_package_config_file (cmake/xmlrpc-c-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/xmlrpc-c-config.cmake
+configure_package_config_file (cmake/xmlrpc-c-config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/xmlrpc-c-config.cmake
   INSTALL_DESTINATION ${lib}/cmake/xmlrpc-c
   NO_CHECK_REQUIRED_COMPONENTS_MACRO)
 
-write_basic_package_version_file (xmlrpc-c-config-version.cmake 
-  VERSION ${XMLRPC_C_LIBVERSION} 
+write_basic_package_version_file (xmlrpc-c-config-version.cmake
+  VERSION ${XMLRPC_C_LIBVERSION}
   COMPATIBILITY SameMajorVersion)
 
 export (PACKAGE xmlrpc-c)
-export (TARGETS 
+export (TARGETS
   xmlrpc xmlrpc_client xmlrpc_server xmlrpc_xmlparse xmlrpc_util xmlrpc_xmltok xmlrpc_client++ xmlrpc++ xmlrpc_packetsocket
-  NAMESPACE xmlrpc-c:: 
+  NAMESPACE xmlrpc-c::
   FILE xmlrpc-c-targets.cmake)
 
 install (FILES
   ${CMAKE_CURRENT_BINARY_DIR}/xmlrpc-c-config.cmake
-  ${CMAKE_CURRENT_BINARY_DIR}/xmlrpc-c-config-version.cmake 
+  ${CMAKE_CURRENT_BINARY_DIR}/xmlrpc-c-config-version.cmake
   DESTINATION ${_lib}/cmake/xmlrpc-c)
 
-install (EXPORT xmlrpc-c-targets 
-  NAMESPACE xmlrpc-c:: 
+install (EXPORT xmlrpc-c-targets
+  NAMESPACE xmlrpc-c::
   DESTINATION ${_lib}/cmake/xmlrpc-c)

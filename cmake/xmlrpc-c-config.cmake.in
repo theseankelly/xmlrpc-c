@@ -1,0 +1,4 @@
+@PACKAGE_INIT@
+
+set(xmlrpc-c_INCLUDE_DIR "@includedir@")
+include("@libdir@/cmake/xmlrpc-c/xmlrpc-c-targets.cmake")
